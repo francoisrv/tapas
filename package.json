@@ -1,0 +1,18 @@
+{
+  "name": "@{{ name }}/tapas",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "delay:build": "sleep 5 && yarn build",
+    "start": "node dist",
+    "start:dev": "nodemon --exec 'yarn start'",
+    "watch": "yarn sync && node dist/watch",
+    "sync": "node dist/sync"
+  },
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "graphoose": "^2.3.0"
+  }
+}
