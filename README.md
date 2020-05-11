@@ -38,7 +38,7 @@ export interface Query {
 import { Query } from './main'
 
 export const getCode: Query.getCode = async (_, vars) => {
-
+  return null
 }
 ```
 
