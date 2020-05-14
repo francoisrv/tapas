@@ -52,11 +52,18 @@ export const getCode: Query.getCode = async (_, vars) => {
 
 ```gql
 # main.client.gql
+
+fragment FooFragment on Foo {
+  score: Int !
+}
+
 query getCode(
   $name: String !
 ) {
   getCode(
     name: $name
-  )
+  ) {
+    ...FooFragment
+  }
 }
 ```
