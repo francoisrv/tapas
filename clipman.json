@@ -1,0 +1,17 @@
+{
+  "name": "tapas",
+  "version": "1.0.0",
+  "description": "Export graphql",
+  "commands": {
+    "sync": {
+      "description": "Sync graphql file",
+      "entry": "dist/sync",
+      "options": {
+        "source": {
+          "description": "The file to sync",
+          "required": true
+        }
+      }
+    }
+  }
+}

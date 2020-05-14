@@ -13,23 +13,31 @@ Useful to have your graphql files as the single source of truth.
 
 ```gql
 # main.graphql
+type Foo {
+  score: Int !
+}
+
 type Query {
-  getCode(name: String !): Int !
+  getCode(name: String !): Foo !
 }
 ```
 
 From terminal:
 
 ```bash
-tapas sync main.graphql
+tapas sync --source main.graphql
 ```
 
 Creates the following files:
 
 ```ts
 // main.ts
+export interface Foo {
+  score: number
+}
+
 export interface Query {
-  getCode: ((_: any, vars: { name: string }): Promise<number>)
+  getCode(_: any, vars: { name: string }): Promise<Foo>
 }
 ```
 
